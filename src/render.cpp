@@ -472,4 +472,4 @@ int DrawList::getSize() {
 	return items.size();
 }
 
-DrawListItem::DrawListItem(Animation* anim, int element) : anim(anim), animNumber(anim != nullptr?anim->animNumber:-1), element(element), pos{ 0,0 }, scale{ 1,1 }, angle{ 0,0,0 }, flip(Flip::None), focalLength(1024), spr(nullptr), animIndex(0), visible(true), projection(Projection::Orthographic) {}
+DrawListItem::DrawListItem(Animation* anim, int element) : anim(anim), animNumber(anim != nullptr?anim->animNumber:-1), element(element), pos{ 0,0 }, scale{ 1,1 }, angle{ 0,0,0 }, flip(Flip::None), focalLength(2048), spr(nullptr), animIndex(0), visible(true), projection(Projection::Orthographic) {}
