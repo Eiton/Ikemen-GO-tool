@@ -10,18 +10,18 @@
 
 void trim(std::string& s) {
 	s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](unsigned char ch) {
-		return !std::isspace(ch);
+		return !std::isspace(ch) && ch != '\t';
 	}));
 	s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char ch) {
-		return !std::isspace(ch);
+		return !std::isspace(ch) && ch != '\t';
 	}).base(), s.end());
 }
 void cleanLine(std::string &line) {
-	trim(line);
 	//remove comments
 	if (line.find(";") >= 0) {
 		line = line.substr(0, line.find(";"));
 	}
+	trim(line);
 	return;
 }
 std::vector<std::string> splitAirParameters(std::string line) {
